@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnrcwhkf0fr1d"]
+
+[ext_resource type="Script" path="res://scenes/projectiles/rock.gd" id="1_sj6gt"]
+[ext_resource type="Texture2D" uid="uid://hty1mmxd7fm3" path="res://Deco/04.png" id="1_wswb3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qtgqh"]
+friction = 10.0
+bounce = 0.4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcv1f"]
+radius = 9.0
+
+[node name="Rock" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 15
+mass = 0.18
+physics_material_override = SubResource("PhysicsMaterial_qtgqh")
+gravity_scale = 0.0
+linear_damp = 1.6
+script = ExtResource("1_sj6gt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, 4)
+texture = ExtResource("1_wswb3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vcv1f")

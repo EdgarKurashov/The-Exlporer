@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://vyeu0x5d7n0d"]
+
+[ext_resource type="Texture2D" uid="uid://cjl2m3ybf1rqd" path="res://Resources/Resources/W_Spawn.png" id="1_277lq"]
+[ext_resource type="Script" path="res://scenes/collectibles/wood_collectible.gd" id="1_kofno"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vacde"]
+atlas = ExtResource("1_277lq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhrbt"]
+atlas = ExtResource("1_277lq")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhlbw"]
+atlas = ExtResource("1_277lq")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yiggr"]
+atlas = ExtResource("1_277lq")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fklqv"]
+atlas = ExtResource("1_277lq")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w8tm"]
+atlas = ExtResource("1_277lq")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23ge6"]
+atlas = ExtResource("1_277lq")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khjm4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vacde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhrbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhlbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yiggr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fklqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w8tm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23ge6")
+}],
+"loop": false,
+"name": &"wood_spawn",
+"speed": 10.0
+}]
+
+[node name="wood_collectible" type="StaticBody2D"]
+script = ExtResource("1_kofno")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_khjm4")
+animation = &"wood_spawn"
+frame = 6
+frame_progress = 1.0

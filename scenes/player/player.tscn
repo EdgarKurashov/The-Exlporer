@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://p3b6pxqrhh88"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_pdg2r"]
+[ext_resource type="Texture2D" uid="uid://ca7iqxy84n32" path="res://Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_qlugt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yk3k8"]
+radius = 17.0
+height = 62.0
+
+[node name="Player" type="CharacterBody2D"]
+show_behind_parent = true
+collision_mask = 31
+script = ExtResource("1_pdg2r")
+
+[node name="PlayerImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_qlugt")
+hframes = 6
+vframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_yk3k8")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="BuildingTimer" type="Timer" parent="."]
+
+[connection signal="player_has_attacked" from="." to="." method="_on_player_has_attacked"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="BuildingTimer" to="." method="_on_building_timer_timeout"]

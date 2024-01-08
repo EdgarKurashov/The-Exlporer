@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgwc5ffck236w"]
+
+[ext_resource type="Texture2D" uid="uid://cmjjsuoka6cbq" path="res://Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="1_oieih"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fe11u"]
+radius = 17.0
+height = 52.0
+
+[node name="Worker" type="CharacterBody2D"]
+collision_mask = 31
+
+[node name="WorkerImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_oieih")
+hframes = 6
+vframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_fe11u")

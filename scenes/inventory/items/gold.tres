@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventItems" load_steps=3 format=3 uid="uid://3jti8y68e4rw"]
+
+[ext_resource type="Script" path="res://scenes/inventory/inventory_item.gd" id="1_5xttm"]
+[ext_resource type="Texture2D" uid="uid://dt8yod1kiewy1" path="res://Resources/Resources/G_Idle.png" id="2_45827"]
+
+[resource]
+script = ExtResource("1_5xttm")
+name = "gold"
+texture = ExtResource("2_45827")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckxf4oy2tjtnf"]
+
+[ext_resource type="Script" path="res://scenes/collectibles/rock_collectible.gd" id="1_6kpxl"]
+[ext_resource type="Texture2D" uid="uid://bddfpvu8d2r4s" path="res://Deco/05.png" id="2_1scr4"]
+
+[node name="rock_collectible" type="StaticBody2D"]
+script = ExtResource("1_6kpxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1scr4")

@@ -1,0 +1,131 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgmqkqmv6uskf"]
+
+[ext_resource type="Texture2D" uid="uid://cogt5dhg0bdgf" path="res://Factions/Knights/Buildings/Tower/Tower_Blue.png" id="1_pfpwr"]
+[ext_resource type="Texture2D" uid="uid://t3lgp2tbdm8t" path="res://Effects/Fire/Fire.png" id="2_bej1c"]
+
+[sub_resource type="Animation" id="Animation_mgs4j"]
+resource_name = "Fire"
+length = 0.72
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tyy1b"]
+_data = {
+"Fire": SubResource("Animation_mgs4j")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aiijs"]
+radius = 44.0454
+
+[node name="Towers" type="StaticBody2D"]
+position = Vector2(1, 0)
+collision_layer = 4
+collision_mask = 11
+
+[node name="BlueTower2" type="Sprite2D" parent="."]
+
+[node name="Blue Tower Burning 2" type="Sprite2D" parent="BlueTower2"]
+position = Vector2(400, 117)
+texture = ExtResource("1_pfpwr")
+
+[node name="FireBot" type="Sprite2D" parent="BlueTower2/Blue Tower Burning 2"]
+position = Vector2(-28, 75)
+scale = Vector2(0.638635, 0.607954)
+skew = -0.352556
+texture = ExtResource("2_bej1c")
+hframes = 7
+
+[node name="FireBot" type="AnimationPlayer" parent="BlueTower2/Blue Tower Burning 2/FireBot"]
+libraries = {
+"": SubResource("AnimationLibrary_tyy1b")
+}
+
+[node name="FireBehind" type="Sprite2D" parent="BlueTower2/Blue Tower Burning 2"]
+show_behind_parent = true
+position = Vector2(30, 49)
+skew = 0.459022
+texture = ExtResource("2_bej1c")
+hframes = 7
+
+[node name="FireBehind" type="AnimationPlayer" parent="BlueTower2/Blue Tower Burning 2/FireBehind"]
+libraries = {
+"": SubResource("AnimationLibrary_tyy1b")
+}
+
+[node name="BlueTower1" type="Sprite2D" parent="."]
+
+[node name="Blue Tower Burning 2" type="Sprite2D" parent="BlueTower1"]
+position = Vector2(274, 118)
+texture = ExtResource("1_pfpwr")
+
+[node name="FireBot" type="Sprite2D" parent="BlueTower1/Blue Tower Burning 2"]
+position = Vector2(-28, 75)
+scale = Vector2(0.638635, 0.607954)
+skew = -0.352556
+texture = ExtResource("2_bej1c")
+hframes = 7
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BlueTower1/Blue Tower Burning 2/FireBot"]
+libraries = {
+"": SubResource("AnimationLibrary_tyy1b")
+}
+
+[node name="BlueTower4" type="Sprite2D" parent="."]
+
+[node name="Blue Tower Burning 3" type="Sprite2D" parent="BlueTower4"]
+position = Vector2(523, 115)
+texture = ExtResource("1_pfpwr")
+
+[node name="FireTop" type="Sprite2D" parent="BlueTower4/Blue Tower Burning 3"]
+position = Vector2(0, -61)
+texture = ExtResource("2_bej1c")
+hframes = 7
+
+[node name="FireTop" type="AnimationPlayer" parent="BlueTower4/Blue Tower Burning 3/FireTop"]
+libraries = {
+"": SubResource("AnimationLibrary_tyy1b")
+}
+
+[node name="FireBot" type="Sprite2D" parent="BlueTower4/Blue Tower Burning 3"]
+position = Vector2(-28, 75)
+scale = Vector2(0.638635, 0.607954)
+skew = -0.352556
+texture = ExtResource("2_bej1c")
+hframes = 7
+
+[node name="FireBot" type="AnimationPlayer" parent="BlueTower4/Blue Tower Burning 3/FireBot"]
+libraries = {
+"": SubResource("AnimationLibrary_tyy1b")
+}
+
+[node name="FireBehind" type="Sprite2D" parent="BlueTower4/Blue Tower Burning 3"]
+show_behind_parent = true
+position = Vector2(30, 49)
+skew = 0.459022
+texture = ExtResource("2_bej1c")
+hframes = 7
+
+[node name="FireBehind" type="AnimationPlayer" parent="BlueTower4/Blue Tower Burning 3/FireBehind"]
+libraries = {
+"": SubResource("AnimationLibrary_tyy1b")
+}
+
+[node name="BlueTower0" type="Sprite2D" parent="."]
+position = Vector2(150, 121)
+texture = ExtResource("1_pfpwr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(151, 180)
+shape = SubResource("CircleShape2D_aiijs")

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0kq2nknhalso"]
+
+[ext_resource type="Texture2D" uid="uid://8dxq842g0w55" path="res://Resources/Gold Mine/GoldMine_Active.png" id="1_7ubv1"]
+[ext_resource type="Script" path="res://scenes/objects/mine.gd" id="1_tatv1"]
+[ext_resource type="Resource" uid="uid://iwxna2kqx8ky" path="res://scenes/inventory/items/rock.tres" id="2_6egrr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yk6tt"]
+size = Vector2(54, 28)
+
+[node name="Mine" type="StaticBody2D"]
+scale = Vector2(1.3, 1.3)
+collision_layer = 4
+collision_mask = 17
+script = ExtResource("1_tatv1")
+item = ExtResource("2_6egrr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7ubv1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-476.923, -118.462)
+polygon = PackedVector2Array(451, 154, 447, 78, 506, 78, 504, 157, 554, 145, 544, 103, 506, 68, 477, 61, 447, 69, 412, 99, 400, 147)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(9.53674e-07, -24.6154)
+shape = SubResource("RectangleShape2D_yk6tt")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 69)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

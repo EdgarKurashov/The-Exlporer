@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://iy82x2si4kc7"]
+
+[ext_resource type="Texture2D" uid="uid://csx1cpofmmcgb" path="res://Resources/Resources/G_Spawn.png" id="1_wmklw"]
+[ext_resource type="Script" path="res://scenes/collectibles/gold_collectible.gd" id="1_y0r4l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgcpt"]
+atlas = ExtResource("1_wmklw")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuvce"]
+atlas = ExtResource("1_wmklw")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knnlj"]
+atlas = ExtResource("1_wmklw")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxsgb"]
+atlas = ExtResource("1_wmklw")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hp7q"]
+atlas = ExtResource("1_wmklw")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gk40k"]
+atlas = ExtResource("1_wmklw")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74tjq"]
+atlas = ExtResource("1_wmklw")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujvgm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgcpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuvce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knnlj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxsgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hp7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gk40k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74tjq")
+}],
+"loop": false,
+"name": &"gold_spawn",
+"speed": 10.0
+}]
+
+[node name="gold_collectible" type="StaticBody2D"]
+script = ExtResource("1_y0r4l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ujvgm")
+animation = &"gold_spawn"

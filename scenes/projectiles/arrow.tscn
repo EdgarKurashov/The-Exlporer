@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1w8csac86r1w"]
+
+[ext_resource type="Texture2D" uid="uid://cocs4g4r8pgu4" path="res://Factions/Knights/Troops/Archer/Arrow/Arrow.png" id="1_hmfur"]
+[ext_resource type="Script" path="res://scenes/projectiles/arrow.gd" id="1_ouc3a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_miail"]
+size = Vector2(10.75, 5)
+
+[node name="Arrow" type="Area2D" groups=["arrow"]]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_ouc3a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("1_hmfur")
+offset = Vector2(-25, 0)
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_miail")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-44, 0)
+scale = Vector2(1.25, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjxbd3x0jshsx"]
+
+[ext_resource type="Script" path="res://scenes/Menu/menu.gd" id="1_7g35c"]
+[ext_resource type="Texture2D" uid="uid://bn6lk15nqg11h" path="res://scenes/explorer_main_menu.png" id="2_cfius"]
+[ext_resource type="Texture2D" uid="uid://b1b3a8kt033l6" path="res://UI/Buttons/Button_Disable_3Slides.png" id="3_162e8"]
+
+[sub_resource type="SystemFont" id="SystemFont_datyw"]
+font_names = PackedStringArray("Algerian")
+
+[sub_resource type="SystemFont" id="SystemFont_wkct3"]
+font_names = PackedStringArray("Algerian")
+
+[sub_resource type="SystemFont" id="SystemFont_y7fmi"]
+font_names = PackedStringArray("Algerian")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7g35c")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cfius")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_datyw")
+theme_override_font_sizes/font_size = 48
+text = "The Explorer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_wkct3")
+theme_override_font_sizes/font_size = 25
+text = "Start Game"
+icon = ExtResource("3_162e8")
+flat = true
+icon_alignment = 1
+
+[node name="Separator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y7fmi")
+theme_override_font_sizes/font_size = 25
+text = "Quit Game"
+icon = ExtResource("3_162e8")
+flat = true
+icon_alignment = 1
