@@ -529,6 +529,7 @@ frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_sme11")
+disabled = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(33, 6)
@@ -541,8 +542,10 @@ collision_mask = 6
 rotation = 1.5708
 scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_tdsxj")
+disabled = true
 
 [node name="InventUI" parent="." instance=ExtResource("7_75m30")]
+visible = false
 show_behind_parent = true
 top_level = false
 offset_left = -235.0

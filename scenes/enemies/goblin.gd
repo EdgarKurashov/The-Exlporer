@@ -24,7 +24,6 @@ func _physics_process(_delta):
 		else:
 			$Sprite2D.play("idle")
 	if dead:
-		await get_tree().create_timer(0.1).timeout
 		$detection/CollisionShape2D.disabled = true
 		$"."/CollisionShape2D.disabled = true
 
