@@ -283,9 +283,9 @@ radius = 1291.27
 
 [node name="Goblin" type="CharacterBody2D"]
 y_sort_enabled = true
-disable_mode = 2
 collision_layer = 2
-collision_mask = 31
+collision_mask = 29
+collision_priority = 50.0
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_bktol")

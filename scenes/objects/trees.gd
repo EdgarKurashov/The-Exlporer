@@ -41,7 +41,6 @@ func _on_growth_timer_timeout():
 		health = 50
 
 func wood_drop():
-	await get_tree().create_timer(0).timeout
 	var wood_instance = wood.instantiate()
 	wood_instance.global_position = $Marker2D.global_position
 	get_parent().add_child(wood_instance)
