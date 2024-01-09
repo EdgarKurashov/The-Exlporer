@@ -17,9 +17,11 @@ subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_x5eme"]
 font_names = PackedStringArray("Algerian")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_2xsk1"]
 font_names = PackedStringArray("Algerian")
+subpixel_positioning = 0
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2

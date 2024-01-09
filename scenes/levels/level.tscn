@@ -401,6 +401,71 @@ layer_1/tile_data = PackedInt32Array(-262141, 65536, 1, -196605, 65536, 1, -1310
 layer_2/name = "Elevations"
 layer_2/tile_data = PackedInt32Array(-65527, 1, 3, -131063, 1, 3, -65524, 131073, 3, -131060, 131073, 3, -65526, 65537, 7, -65525, 65537, 7, -131062, 65537, 7, -131061, 65537, 7, -196599, 1, 2, -196596, 131073, 2, -196597, 393216, 1, -196598, 393216, 1, -262135, 1, 1, -327671, 1, 0, -262132, 131073, 1, -327668, 131073, 0, -327670, 65537, 0, -262134, 393216, 1, -262133, 393216, 1, -327669, 65537, 0)
 
+[node name="decorations" type="Node2D" parent="Ground"]
+
+[node name="mushroom" parent="Ground/decorations" instance=ExtResource("12_w24vj")]
+position = Vector2(117, 0)
+
+[node name="mushroom2" parent="Ground/decorations" instance=ExtResource("12_w24vj")]
+position = Vector2(463, 116)
+
+[node name="mushroom3" parent="Ground/decorations" instance=ExtResource("12_w24vj")]
+position = Vector2(175, -117)
+
+[node name="mushroom4" parent="Ground/decorations" instance=ExtResource("12_w24vj")]
+position = Vector2(243, 136)
+
+[node name="bone" parent="Ground/decorations" instance=ExtResource("13_ne3hi")]
+position = Vector2(-711, -56)
+rotation = -1.34565
+
+[node name="bone2" parent="Ground/decorations" instance=ExtResource("13_ne3hi")]
+position = Vector2(-236, -101)
+scale = Vector2(-1, -1)
+
+[node name="bone3" parent="Ground/decorations" instance=ExtResource("13_ne3hi")]
+position = Vector2(-479, -257)
+
+[node name="sign2" parent="Ground/decorations" instance=ExtResource("14_of14v")]
+position = Vector2(488, -179)
+scale = Vector2(-1, 1)
+
+[node name="sign3" parent="Ground/decorations" instance=ExtResource("14_of14v")]
+position = Vector2(294, -171)
+
+[node name="grass" parent="Ground/decorations" instance=ExtResource("15_mhfmg")]
+position = Vector2(-215, 283)
+
+[node name="grass2" parent="Ground/decorations" instance=ExtResource("15_mhfmg")]
+position = Vector2(550, 13)
+
+[node name="grass3" parent="Ground/decorations" instance=ExtResource("15_mhfmg")]
+position = Vector2(49, -101)
+
+[node name="grass4" parent="Ground/decorations" instance=ExtResource("15_mhfmg")]
+position = Vector2(132, -72)
+
+[node name="grass5" parent="Ground/decorations" instance=ExtResource("15_mhfmg")]
+position = Vector2(568, 227)
+
+[node name="grass6" parent="Ground/decorations" instance=ExtResource("15_mhfmg")]
+position = Vector2(-94, -96)
+
+[node name="grass7" parent="Ground/decorations" instance=ExtResource("15_mhfmg")]
+position = Vector2(32, 202)
+
+[node name="grass8" parent="Ground/decorations" instance=ExtResource("15_mhfmg")]
+position = Vector2(-251, 106)
+
+[node name="grass9" parent="Ground/decorations" instance=ExtResource("15_mhfmg")]
+position = Vector2(876, 147)
+
+[node name="grass10" parent="Ground/decorations" instance=ExtResource("15_mhfmg")]
+position = Vector2(4, -254)
+
+[node name="grass11" parent="Ground/decorations" instance=ExtResource("15_mhfmg")]
+position = Vector2(789, -132)
+
 [node name="Archer" parent="." instance=ExtResource("4_l1bk2")]
 process_mode = 1
 position = Vector2(-33, 380)
@@ -456,68 +521,3 @@ game_manager = NodePath("../..")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
-
-[node name="decorations" type="Node2D" parent="."]
-
-[node name="mushroom" parent="decorations" instance=ExtResource("12_w24vj")]
-position = Vector2(117, 0)
-
-[node name="mushroom2" parent="decorations" instance=ExtResource("12_w24vj")]
-position = Vector2(463, 116)
-
-[node name="mushroom3" parent="decorations" instance=ExtResource("12_w24vj")]
-position = Vector2(175, -117)
-
-[node name="mushroom4" parent="decorations" instance=ExtResource("12_w24vj")]
-position = Vector2(243, 136)
-
-[node name="bone" parent="decorations" instance=ExtResource("13_ne3hi")]
-position = Vector2(-711, -56)
-rotation = -1.34565
-
-[node name="bone2" parent="decorations" instance=ExtResource("13_ne3hi")]
-position = Vector2(-236, -101)
-scale = Vector2(-1, -1)
-
-[node name="bone3" parent="decorations" instance=ExtResource("13_ne3hi")]
-position = Vector2(-479, -257)
-
-[node name="sign2" parent="decorations" instance=ExtResource("14_of14v")]
-position = Vector2(488, -179)
-scale = Vector2(-1, 1)
-
-[node name="sign3" parent="decorations" instance=ExtResource("14_of14v")]
-position = Vector2(294, -171)
-
-[node name="grass" parent="decorations" instance=ExtResource("15_mhfmg")]
-position = Vector2(-215, 283)
-
-[node name="grass2" parent="decorations" instance=ExtResource("15_mhfmg")]
-position = Vector2(550, 13)
-
-[node name="grass3" parent="decorations" instance=ExtResource("15_mhfmg")]
-position = Vector2(49, -101)
-
-[node name="grass4" parent="decorations" instance=ExtResource("15_mhfmg")]
-position = Vector2(132, -72)
-
-[node name="grass5" parent="decorations" instance=ExtResource("15_mhfmg")]
-position = Vector2(568, 227)
-
-[node name="grass6" parent="decorations" instance=ExtResource("15_mhfmg")]
-position = Vector2(-94, -96)
-
-[node name="grass7" parent="decorations" instance=ExtResource("15_mhfmg")]
-position = Vector2(32, 202)
-
-[node name="grass8" parent="decorations" instance=ExtResource("15_mhfmg")]
-position = Vector2(-251, 106)
-
-[node name="grass9" parent="decorations" instance=ExtResource("15_mhfmg")]
-position = Vector2(876, 147)
-
-[node name="grass10" parent="decorations" instance=ExtResource("15_mhfmg")]
-position = Vector2(4, -254)
-
-[node name="grass11" parent="decorations" instance=ExtResource("15_mhfmg")]
-position = Vector2(789, -132)
