@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4tglrthcc4ty"]
+[gd_scene load_steps=8 format=3 uid="uid://c4tglrthcc4ty"]
 
 [ext_resource type="Texture2D" uid="uid://b1b3a8kt033l6" path="res://UI/Buttons/Button_Disable_3Slides.png" id="1_eb8v2"]
 [ext_resource type="Script" path="res://scenes/Menu/pause_menu.gd" id="1_qwwx4"]
@@ -14,6 +14,12 @@ subpixel_positioning = 0
 [sub_resource type="SystemFont" id="SystemFont_hmonn"]
 font_names = PackedStringArray("Algerian")
 subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_x5eme"]
+font_names = PackedStringArray("Algerian")
+
+[sub_resource type="SystemFont" id="SystemFont_2xsk1"]
+font_names = PackedStringArray("Algerian")
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -32,35 +38,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
+offset_left = -300.0
 offset_top = -150.0
-offset_right = 150.0
+offset_right = 300.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="PauseContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -150.0
-offset_right = 150.0
-offset_bottom = 150.0
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 300.0
 grow_horizontal = 2
-grow_vertical = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="Panel/PauseContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_51kye")
 theme_override_font_sizes/font_size = 30
 text = "PAUSE"
 horizontal_alignment = 1
 
-[node name="StartButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="StartButton" type="Button" parent="Panel/PauseContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_adxw0")
@@ -71,7 +73,7 @@ flat = true
 clip_text = true
 icon_alignment = 1
 
-[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Panel/PauseContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_hmonn")
@@ -82,5 +84,117 @@ flat = true
 clip_text = true
 icon_alignment = 1
 
-[connection signal="pressed" from="Panel/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="AttackContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 200.0
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Panel/AttackContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_x5eme")
+theme_override_font_sizes/font_size = 30
+text = "ATTACK"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/AttackContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_2xsk1")
+text = "Equip/unequip bow - \"z\""
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Panel/AttackContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_2xsk1")
+text = "Shoot an arrow - \"lmb\""
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel/AttackContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_2xsk1")
+text = "Equip/unequip axe - \"x\""
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Panel/AttackContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_2xsk1")
+text = "axe attack - \"lmb\""
+horizontal_alignment = 1
+
+[node name="MovementContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 200.0
+grow_horizontal = 0
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Panel/MovementContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_x5eme")
+theme_override_font_sizes/font_size = 30
+text = "movement"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/MovementContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_2xsk1")
+text = "move up - \"w\""
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel/MovementContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_2xsk1")
+text = "move down - \"s\""
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Panel/MovementContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_2xsk1")
+text = "move left - \"a\""
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Panel/MovementContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_2xsk1")
+text = "move right - \"d\""
+horizontal_alignment = 1
+
+[node name="InventoryContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 600.0
+grow_vertical = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/InventoryContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = SubResource("SystemFont_51kye")
+theme_override_font_sizes/font_size = 30
+text = "inventory:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/InventoryContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = SubResource("SystemFont_2xsk1")
+text = "open/close - \"i\""
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel/InventoryContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = SubResource("SystemFont_2xsk1")
+text = "remove item - f"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Panel/PauseContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Panel/PauseContainer/QuitButton" to="." method="_on_quit_button_pressed"]

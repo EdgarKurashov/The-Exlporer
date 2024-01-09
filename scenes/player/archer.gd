@@ -10,12 +10,14 @@ var axe_equiped = false
 var axe_cooldown = true
 var collision_shape: CollisionShape2D 
 
+@onready var InventUI = $InventUI
 @export var invent:Invent
+
 
 
 #updates characters physics
 func _physics_process(_delta):
-	if Input.is_action_just_pressed("remove_item"):
+	if Input.is_action_just_pressed("remove_item") and InventUI.is_open:
 		remove_first_item()
 	
 	mouse_location_from_player = get_global_mouse_position() - self.position
