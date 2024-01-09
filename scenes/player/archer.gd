@@ -156,29 +156,26 @@ func collect(item): #player has access to inventory, so item gets passed to inve
 
 func remove_first_item():
 	if invent and invent.slots.size() > 0:
-		#check, is there items in inventory
-		var first_slot = invent.slots[0]
-		if first_slot.item:
-			first_slot.amount -= 1
-			#if item amount  == 0 -> delete item from slot
-			if first_slot.amount <= 0:
-				first_slot.item = null
-
-			# If there is a next slot and it is not empty, move the item there
-			if invent.slots.size() > 1 and first_slot.amount <= 0:
-				var second_slot = invent.slots[1]
-				if second_slot.item:
-					first_slot.item = second_slot.item
-					first_slot.amount = second_slot.amount
-					#empty second slot
-					second_slot.item = null
-					second_slot.amount = 0
-					if invent.slots.size() > 2 and second_slot.amount <= 0:
-						var third_slot = invent.slots[2]
-						if third_slot.item:
-							second_slot.item = third_slot.item
-							second_slot.amount = third_slot.amount
-							third_slot.item = null
-							third_slot.amount = 0
-		invent.update.emit()
+		var current_slot = invent.slots[0]
+		#checks if slot holds an item
+		if current_slot.item:
+			current_slot.amount -= 1
+			invent.update.emit()
+			if current_slot.amount == 0:
+				current_slot.item = null
+				current_slot.amount = 0
+				#checks if there are vairāki 
+				if invent.slots.size() > 1:
+					var next_slot = invent.slots[1]
+					while next_slot.item and current_slot.amount <= 0:
+						current_slot.item = next_slot.item
+						current_slot.amount = next_slot.amount
+						next_slot.item = null
+						next_slot.amount = 0
+						current_slot = next_slot
+						if invent.slots.size() > 2:
+							next_slot = invent.slots[2]
+						else:
+							next_slot = null
+				invent.update.emit()
 
