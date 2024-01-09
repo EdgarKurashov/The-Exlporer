@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckd6mky46ju0j"]
+
+[ext_resource type="Texture2D" uid="uid://cilffa1mq2nnj" path="res://Deco/16.png" id="1_lins1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n0g1b"]
+radius = 22.0
+height = 84.0
+
+[node name="sign" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lins1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_n0g1b")

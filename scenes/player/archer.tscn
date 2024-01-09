@@ -525,9 +525,11 @@ invent = ExtResource("2_1fdkh")
 sprite_frames = SubResource("SpriteFrames_0g611")
 animation = &"axe_attack"
 autoplay = "bow_idle"
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_sme11")
+disabled = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(33, 6)
@@ -543,6 +545,7 @@ shape = SubResource("CapsuleShape2D_tdsxj")
 disabled = true
 
 [node name="InventUI" parent="." instance=ExtResource("7_75m30")]
+visible = false
 show_behind_parent = true
 top_level = false
 offset_left = -235.0

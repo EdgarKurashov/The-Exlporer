@@ -14,7 +14,6 @@ var collision_shape: CollisionShape2D
 @export var invent:Invent
 
 
-
 #updates characters physics
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("remove_item") and InventUI.is_open:
@@ -47,7 +46,6 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("primary action") and axe_equiped and axe_cooldown and archer_state == "idle":
 		if Input.is_action_pressed("primary action"):
 			$AxeHitbox/CollisionShape2D.disabled = false
-			play_animation(direction)
 		axe_cooldown = false
 		await get_tree().create_timer(1).timeout
 		axe_cooldown = true
@@ -181,4 +179,6 @@ func remove_first_item():
 						else:
 							next_slot = null
 				invent.update.emit()
+
+
 
