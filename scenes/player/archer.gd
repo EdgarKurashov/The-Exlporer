@@ -47,10 +47,11 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("primary action") and axe_equiped and axe_cooldown and archer_state == "idle":
 		if Input.is_action_pressed("primary action"):
 			$AxeHitbox/CollisionShape2D.disabled = false
-		print("axe attack")
+			play_animation(direction)
 		axe_cooldown = false
 		await get_tree().create_timer(1).timeout
 		axe_cooldown = true
+
 	else:
 		$AxeHitbox/CollisionShape2D.disabled = true
 	
@@ -166,7 +167,7 @@ func remove_first_item():
 			if current_slot.amount == 0:
 				current_slot.item = null
 				current_slot.amount = 0
-				#checks if there are vairāki 
+				#checks if there are item in second slot 
 				if invent.slots.size() > 1:
 					var next_slot = invent.slots[1]
 					while next_slot.item and current_slot.amount <= 0:
