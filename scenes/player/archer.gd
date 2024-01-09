@@ -43,7 +43,7 @@ func _physics_process(_delta):
 	var mouse_position = get_global_mouse_position()
 	$Marker2D.look_at(mouse_position)
 
-	if Input.is_action_just_pressed("primary action") and axe_equiped and archer_state == "idle":
+	if Input.is_action_just_pressed("primary action") and axe_equiped and axe_cooldown and archer_state == "idle":
 		if Input.is_action_pressed("primary action"):
 			$AxeHitbox/CollisionShape2D.disabled = false
 		axe_cooldown = false

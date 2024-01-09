@@ -33,7 +33,6 @@ func chopped_tree():
 		$tree.frame = 4
 	if chopped == true:
 		wood_drop()
-		$growth_timer.start()
 
 
 func _on_growth_timer_timeout():
