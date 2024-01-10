@@ -183,7 +183,7 @@ text = "inventory:"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Panel/InventoryContainer"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(133, 0)
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_fonts/font = SubResource("SystemFont_2xsk1")
@@ -191,11 +191,19 @@ text = "open/close - \"i\""
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="Panel/InventoryContainer"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(133, 0)
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_fonts/font = SubResource("SystemFont_2xsk1")
 text = "remove item - f"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Panel/InventoryContainer"]
+custom_minimum_size = Vector2(133, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = SubResource("SystemFont_2xsk1")
+text = "mine - e"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Panel/PauseContainer/StartButton" to="." method="_on_start_button_pressed"]
